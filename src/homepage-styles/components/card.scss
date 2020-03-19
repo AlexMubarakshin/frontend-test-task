@@ -1,3 +1,5 @@
+@import './breakpoints.scss';
+
 .card {
   display: flex;
   box-sizing: border-box;
@@ -6,26 +8,44 @@
   padding: 15px;
 
   &__large {
-    height: 211px;
-    width: 211px;
-    min-width: 211px;
+    height: calc(98vw / 313 * 211);
+    width: calc(98vw / 313 * 211);
+
     overflow-y: auto;
     justify-content: flex-start;
     padding: 20px 20px 3px 15px;
-    margin-right: 7px;
+    margin-right: 5px;
+
+    @include sm {
+      height: calc((100vw - 35px) / 733 * 492);
+      width: calc((100vw - 35px) / 733 * 492);
+      max-height: 492px;
+      max-width: 492px;
+    }
   }
 
   &__small {
     height: 102px;
     min-height: 155px;
-    width: calc(100vw / 2 - 25px);
-    min-width: 155px;
+
+    width: 50%;
+
+
+    @include sm {
+      width: 100%;
+    }
   }
 
   &__minimal {
-    height: 102px;
+    height: 32vw;
     width: 100%;
     padding: 10px;
+
+    @include sm {
+      max-width: 241px;
+      height: 50%;
+      padding: 15px;
+    }
   }
 
   &__wide {
@@ -43,11 +63,106 @@
     &_small {
       font-size: 14px;
       font-weight: normal;
-      line-height: 14px;
+      line-height: 20px;
     }
   }
 
   &__right-maring {
     margin-right: 10px;
   }
+
+  &__image_container {
+    position: relative;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background: no-repeat url("../../images/lainer.png") 50% 50%;
+    background-size: cover;
+    color: #ffffff;
+  }
+
+  &__overlayed {
+    cursor: pointer;
+
+    .card__overlay {
+      opacity: 0;
+    }
+
+    &:hover {
+      .card__image {
+        filter: blur(15px);
+      }
+
+      .card__overlay {
+        opacity: 1;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+
+      .warning-icon {
+        z-index: 99999;
+        width: 25%;
+        height: 25%;
+        font-size: 36px;
+        color: $red-main-color;
+        background-color: #ffffff;
+        border-radius: 50%;
+        z-index: 100;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -12.5%;
+        margin-left: -12.5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  &__text_row {
+    align-items: flex-end;
+    bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    top: -5px;
+
+    &::before {
+      content: "";
+      display: block;
+      border-bottom: 1px dashed #000000;
+      bottom: 5px;
+      height: 0;
+      left: 0px;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  &__text_column-left {
+    text-align: left;
+  }
+
+  &__text_column-right {
+    text-align: right;
+  }
+
+  &__text_column-left,
+  &__text_column-right {
+    background: $green-main-color;
+    box-shadow: 0 10px 0px 10px $green-main-color;
+    max-width: 150px;
+    z-index: 2;
+  }
+
 }

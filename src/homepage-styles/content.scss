@@ -1,8 +1,118 @@
+@import './breakpoints.scss';
+
 .page-content {
   padding: 5px 0px;
 
   display: flex;
   flex-direction: column;
 
-  &__section {}
+  @include sm {
+    padding: 5px 8px;
+  }
+
+}
+
+.page-content__section_first {
+  @include sm {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+
+    .row_small {
+      flex-direction: column;
+      margin: 5px;
+
+      .card {
+        margin: 0
+      }
+    }
+
+    .column {
+      margin: 0 5px;
+    }
+  }
+}
+
+.page-content__section_second {
+
+  @include sm {
+    order: -1;
+    justify-content: space-between;
+
+    .card__large {
+      margin-left: 5px;
+    }
+  }
+
+
+  .column {
+    width: calc(98vw / 313 * 102);
+
+    @include sm {
+      width: calc((100vw - 35px) / 733 * 241);
+      margin: 0px 5px;
+
+      .card__minimal:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.page-content__section_third {
+  @include sm {
+    display: flex;
+    flex-direction: row-reverse;
+    box-sizing: border-box;
+
+    .row_small {
+      flex-direction: column;
+      margin: 5px;
+
+      .card {
+        margin: 0
+      }
+    }
+
+    .column {
+      margin: 0 10px 0 5px;
+      width: calc((100vw - 35px) / 733 * 241);
+
+    }
+
+    .card__minimal:first-child {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.page-content__section_fourth {
+  @include sm {
+    display: flex;
+    flex-direction: row-reverse;
+    box-sizing: border-box;
+
+    .row_small {
+      flex-direction: column;
+      margin: 5px;
+
+      .card {
+        margin: 0
+      }
+
+    }
+
+    .column {
+      margin: 0 5px;
+    }
+  }
+}
+
+.page-content__desktop {
+  display: none;
+
+  @include sm {
+    display: block;
+  }
+
 }

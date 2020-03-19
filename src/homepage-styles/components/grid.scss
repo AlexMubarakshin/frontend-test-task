@@ -1,3 +1,5 @@
+@import '../breakpoints.scss';
+
 .column {
   display: flex;
   flex-direction: column;
@@ -10,6 +12,25 @@
 .row {
   display: flex;
   flex-direction: row;
+}
+
+.row,
+.column {
+  &_big {
+    @include sm {
+      width: 65.5%;
+      max-width: 492px;
+      margin: 5px;
+    }
+  }
+
+  &_small {
+    @include sm {
+      width: 32%;
+      margin: 10px 5px;
+      justify-content: space-between;
+    }
+  }
 }
 
 .row__margin {
