@@ -1,0 +1,17 @@
+.column {
+  display: flex;
+  flex-direction: column;
+
+  &__cards {
+    justify-content: space-between;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.row__margin {
+  margin: 5px 0px;
+}

@@ -9,7 +9,7 @@ module.exports = {
   mode,
   context: __dirname,
   entry: {
-    styles: ['./src/sass/main.scss']
+    homepage: ['./src/homepage-styles/main.scss']
   },
   module: {
     rules: [
@@ -42,7 +42,7 @@ module.exports = {
     {
       apply(compiler) {
         compiler.hooks.shouldEmit.tap('Remove styles from output', (compilation) => {
-          delete compilation.assets['styles.js'];  // Remove asset. Name of file depends of your entries and 
+          delete compilation.assets['homepage.js'];  // Remove asset. Name of file depends of your entries and 
           return true;
         })
       }

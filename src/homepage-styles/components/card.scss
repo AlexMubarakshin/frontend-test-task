@@ -1,0 +1,53 @@
+.card {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 15px;
+
+  &__large {
+    height: 211px;
+    width: 211px;
+    min-width: 211px;
+    overflow-y: auto;
+    justify-content: flex-start;
+    padding: 20px 20px 3px 15px;
+    margin-right: 7px;
+  }
+
+  &__small {
+    height: 102px;
+    min-height: 155px;
+    width: calc(100vw / 2 - 25px);
+    min-width: 155px;
+  }
+
+  &__minimal {
+    height: 102px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  &__wide {
+    min-height: 155px;
+    margin: 5px 0px;
+  }
+
+  &__text {
+    &_large {
+      font-size: 18px;
+      line-height: 26px;
+      text-align: center;
+    }
+
+    &_small {
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 14px;
+    }
+  }
+
+  &__right-maring {
+    margin-right: 10px;
+  }
+}
