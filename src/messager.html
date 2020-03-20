@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messager</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="messager">
+    <div class="messager__history">
+
+      <div class="message message__in">
+        <img src="<%=require('../images/avatar-image_croped.png').default%>" alt="Sender avatar"
+          class="message__in_photo photo">
+        <div class="message__text_wrapper">
+          <div class="message__in_text text">
+            Это означает, что в Вашем доме, офисе, кабинете, мастерской хранятся ценности бóльшие, чем просто деньги или
+            драгоценности, - культурные ценности. Произведения искусства, антиквариат, иные предметы коллекционирования
+            –
+            все это имущество, безусловно высокая стоимость которого.
+          </div>
+        </div>
+      </div>
+
+      <div class="message message__out">
+        <div class="message__text_wrapper">
+          <div class="message__out_text text">
+            Это означает,
+          </div>
+        </div>
+        <img src="<%=require('../images/avatar-image_croped.png').default%>" alt="Sender avatar"
+          class="message__out_photo photo">
+      </div>
+
+      <div class="message message__in">
+        <img src="<%=require('../images/avatar-image_croped.png').default%>" alt="Sender avatar"
+          class="message__in_photo photo">
+        <div class="message__text_wrapper">
+          <div class="message__in_text text">
+            доме, офисе, кабинете, мастерской
+          </div>
+        </div>
+      </div>
+
+      <div class="messager__history_date-split">21 октября 2017</div>
+
+      <div class="message message__out">
+        <div class="message__text_wrapper">
+          <div class="message__out_text text">
+            Это означает,
+          </div>
+        </div>
+        <img src="<%=require('../images/avatar-image_croped.png').default%>" alt="Sender avatar"
+          class="message__out_photo photo">
+      </div>
+
+      <div class="message message__in">
+        <img src="<%=require('../images/avatar-image_croped.png').default%>" alt="Sender avatar"
+          class="message__in_photo photo">
+        <div class="message__text_wrapper">
+          <div class="message__in_text text">
+            доме, офисе, кабинете, мастерской
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <form action="" class="messager__input">
+      <textarea autofocus class="messager__input_textarea"></textarea>
+      <button class="messager__input_button">Отправить</button>
+    </form>
+
+  </div>
+</body>
+
+</html>

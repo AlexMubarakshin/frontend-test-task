@@ -9,7 +9,8 @@ module.exports = {
   mode,
   context: __dirname,
   entry: {
-    homepage: ['./src/homepage-styles/main.scss']
+    homepage: ['./src/homepage-styles/main.scss'],
+    messager: ['./src/messager-styles/main.scss']
   },
   module: {
     rules: [
@@ -45,7 +46,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       template: './src/index.html',
-      filename: './index.html'
+      filename: './index.html',
+      chunks: ['homepage'],
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      template: './src/messager.html',
+      filename: './messager.html',
+      chunks: ['messager'],
     }),
     {
       apply(compiler) {

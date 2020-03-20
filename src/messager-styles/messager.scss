@@ -1,0 +1,156 @@
+body {
+  background-color: $white-main-color;
+  font-family: "Roboto", sans-serif;
+}
+
+.messager {
+  width: 651px;
+  margin: 0 auto;
+
+  background-size: cover;
+  background-image: url("../../images/chat-bacckground.png");
+  background-repeat: no-repeat;
+
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.15);
+}
+
+.messager__history {
+  max-height: 506px;
+  overflow-y: auto;
+  width: 100%;
+
+
+  &_date-split {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      border-bottom: 2px solid $grey-main-color;
+    }
+
+    &::before {
+      margin-right: 20px;
+    }
+
+    &::after {
+      margin-left: 25px;
+    }
+  }
+}
+
+.message {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px 36px 20px 15px;
+
+  &:first-child {
+    margin-top: 41px;
+  }
+
+  &__out {
+    justify-content: flex-end;
+  }
+
+  .photo {
+    width: 47px;
+    height: 47px;
+
+    // Not working on IE 11 🤬
+    // clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  }
+
+  .text {
+    background-color: $white-main-color;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 24px;
+    max-width: 440px;
+    overflow: visible;
+    padding: 15px 15px 7px;
+    position: relative;
+  }
+
+  &__text_wrapper {
+    position: relative;
+    margin-left: 19px;
+    margin-right: 19px;
+  }
+
+  &.message__in {
+    .message__text_wrapper::before {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: -6px;
+      right: auto;
+      top: 7px;
+      bottom: auto;
+      border: 7px solid;
+      border-color: $white-main-color $white-main-color transparent transparent;
+    }
+  }
+
+  &.message__out {
+    .message__text_wrapper:after {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      right: -6px;
+      left: auto;
+      top: 7px;
+      bottom: auto;
+      border: 7px solid;
+      border-color: $white-main-color transparent transparent $white-main-color;
+    }
+  }
+
+}
+
+.messager__input {
+  border-top: 2px solid $grey-main-color;
+  height: 200px;
+  padding: 20px;
+
+  &_textarea {
+    outline-color: $blue-main-color;
+    border-color: $grey-main-color;
+    border-radius: 4px;
+    color: $grey-darken-color;
+    font-family: "Noto Sans", arial;
+    font-size: 14px;
+    height: 107px;
+    line-height: 19px;
+    margin-bottom: 15px;
+    overflow: auto;
+    overflow: scroll;
+    padding: 10px;
+    resize: none;
+    width: 570px;
+  }
+
+
+  &_button {
+    cursor: pointer;
+    background: $blue-main-color;
+    border-radius: 21px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    height: 41px;
+    text-align: center;
+    width: 144px;
+  }
+
+}
